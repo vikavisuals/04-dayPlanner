@@ -1,7 +1,14 @@
 body {
   font-family: 'Varela Round', sans-serif;
+  background-color: rgb(105, 154, 165);
   font-size: 16px;
   line-height: 1;
+}
+
+
+#currentDay {
+  font-size: 40px;
+  color: rgb(90, 32, 32);
 }
 
 textarea{
@@ -15,10 +22,11 @@ textarea{
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-color: rgb(180, 180, 180);
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+  margin: 0;
 }
 
 .description{
