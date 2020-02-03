@@ -23,12 +23,14 @@ function checkHour() {
 
   for (let i = 0; i < hoursInDay.length; i++) {
     if (hoursInDay[i] > currentTime) {
-      $('#hoursInDay[i]').addClass(".future");
+      $('#' + hoursInDay[i]).addClass("future");
       console.log("Green");
       
     } else if (hoursInDay[i] === currentTime) {
+      $('#' + hoursInDay[i]).addClass("present");
       console.log("Current");
     } else {
+      $('#' + hoursInDay[i]).addClass("past");
       console.log("Grey");
     }
   }
