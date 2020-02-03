@@ -10,8 +10,6 @@ console.log(moment().format('HH'));
 // Displays the day of the week in header
 $("#currentDay").text(moment().format('dddd, MMMM Do'));
 
-$("#presentBar").text(moment().format('h A'));
-
 
 
 const hoursInDay = [9, 10, 11, 12, 13, 14, 15, 16, 17];
@@ -19,14 +17,14 @@ const hoursInDay = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 let currentTime = parseInt(moment().format('HH'));
 
 
-function checkHour() {
+function timeSlot() {
 
   for (let i = 0; i < hoursInDay.length; i++) {
     if (hoursInDay[i] > currentTime) {
       $(`#${hoursInDay[i]}`).addClass("future");
-      $(`#${hoursInDay[i]}`).append(moment().format(`${hoursInDay[i]}`, 'h A'));
+      console.log(moment().format('h A'));
       console.log("Green");
-      
+
     } else if (hoursInDay[i] === currentTime) {
       $(`#${hoursInDay[i]}`).addClass("present");
       console.log("Current");
@@ -35,14 +33,15 @@ function checkHour() {
       console.log("Grey");
     }
   }
-return;
+  return;
+  
 };
 
-checkHour();
+timeSlot();
 
 
 
-console.log(hoursInDay);
+
 console.log(currentTime);
 
 
