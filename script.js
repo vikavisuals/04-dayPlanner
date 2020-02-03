@@ -24,6 +24,7 @@ function checkHour() {
   for (let i = 0; i < hoursInDay.length; i++) {
     if (hoursInDay[i] > currentTime) {
       $(`#${hoursInDay[i]}`).addClass("future");
+      $(`#${hoursInDay[i]}`).append(moment().format(`${hoursInDay[i]}`, 'h A'));
       console.log("Green");
       
     } else if (hoursInDay[i] === currentTime) {
