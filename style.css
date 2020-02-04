@@ -85,14 +85,18 @@ textarea {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
   background-color: rgb(39, 67, 99);
   color: white;
-  outline: none;
   font-size: 30px;
   text-align: center;
 }
 
 .saveBtn:hover {
   background-color: rgb(116, 35, 35);
-  outline: none;
+}
+
+.saveBtn:focus {
+  background-color: rgb(116, 35, 35);
 }
