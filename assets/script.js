@@ -1,11 +1,9 @@
-
 // Displays the day of the week in header
 $("#currentDay").text(moment().format('dddd, MMMM Do'));
 
 // Dynamically changing live time at top of page
 var updateTime = function () {
-  document.getElementById("currentClock")
-    .innerHTML = moment().format('hh:mm:ss a');
+  $("#currentClock").text(moment().format('hh:mm:ss a'));
 }
 setInterval(updateTime, 1000);
 updateTime();
@@ -18,7 +16,6 @@ let currentTime = parseInt(moment().format('HH'));
 
 // Determines color of timeslot based on the time of day
 function timeSlot() {
-
   for (let i = 0; i < hoursInDay.length; i++) {
     if (hoursInDay[i] > currentTime) {
       $(`#${hoursInDay[i]}`).addClass("future");
@@ -36,29 +33,16 @@ timeSlot();
 $(this).on("click", function (event) {
   event.preventDefault();
   for (let i = 0; i < hoursInDay.length; i++) {
-  let currentTask = $(`#task${hoursInDay[i]}`).val();
-  localStorage.setItem(`save${hoursInDay[i]}`, currentTask);
+    let currentTask = $(`#task${hoursInDay[i]}`).val();
+    localStorage.setItem(`save${hoursInDay[i]}`, currentTask);
   }
 });
 
 // Shows previously saved tasks in the task input box
 function showTasks() {
   for (let i = 0; i < hoursInDay.length; i++) {
-  let displayTask = localStorage.getItem(`save${hoursInDay[i]}`);
-  $(`#task${hoursInDay[i]}`).val(displayTask);
+    let displayTask = localStorage.getItem(`save${hoursInDay[i]}`);
+    $(`#task${hoursInDay[i]}`).val(displayTask);
   }
 };
 showTasks();
-
-
-console.log(currentTime);
-
-
-
-// Turns 24 time into 12 hour
-currentTime = parseInt(moment().format('h A'));
-console.log(currentTime);
-
-
-//DELETE BTN
-// localStorage.clear()

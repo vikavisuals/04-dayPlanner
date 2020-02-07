@@ -104,5 +104,23 @@ textarea {
 }
 
 .saveBtn:focus {
-  background-color: rgb(116, 35, 35);
+  background-color: rgb(35, 116, 46);
+}
+
+#deleteBtn {
+  border-radius: 15px;
+  background-color: rgb(99, 39, 39);
+  color: white;
+  font-size: 30px;
+  width: 200px;
+  height: 80px;
+}
+
+#deleteBtn:hover {
+  background-color: rgb(145, 59, 59);
+  color: white;
+}
+
+#deleteBtn:focus {
+  background-color: rgb(116, 97, 35);
 }
