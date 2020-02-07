@@ -1,12 +1,4 @@
 
-
-
-// Shows the day of the week
-console.log(moment().format('dddd, MMMM Do'));
-
-// Shows hour and minute in American formatting
-console.log(moment().format('HH'));
-
 // Displays the day of the week in header
 $("#currentDay").text(moment().format('dddd, MMMM Do'));
 
@@ -17,32 +9,28 @@ var updateTime = function() {
 }
 setInterval(updateTime, 1000);
 
-
+// Assigning hours 9am-5pm in 24hr format
 const hoursInDay = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
+// Formats time into 24hr and into a number vs string
 let currentTime = parseInt(moment().format('HH'));
 
-
+// Determines color of timeslot based on the time of day
 function timeSlot() {
 
   for (let i = 0; i < hoursInDay.length; i++) {
     if (hoursInDay[i] > currentTime) {
       $(`#${hoursInDay[i]}`).addClass("future");
-      console.log(moment().format('h A'));
-      console.log("Green");
-
     } else if (hoursInDay[i] === currentTime) {
       $(`#${hoursInDay[i]}`).addClass("present");
-      console.log("Current");
     } else {
       $(`#${hoursInDay[i]}`).addClass("past");
-      console.log("Grey");
     }
   }
   return;
-  
 };
 
+// Calling functions
 timeSlot();
 updateTime();
 
