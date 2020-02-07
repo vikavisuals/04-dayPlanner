@@ -12,4 +12,4 @@
 
 
 ## Screenshot
-![Image of application](https://vkaszuba.github.io/04-dayPlanner/dayPlannerScreenshot.JPG)
+![Image of application](https://github.com/vkaszuba/04-dayPlanner/blob/master/images/dayPlannerScreenshot.JPG)
