@@ -99,14 +99,10 @@ textarea {
 }
 
 .saveBtn:hover {
-  background-color: rgb(116, 35, 35);
+  background-color: rgb(59, 99, 145);
+  color: white;
 }
 
 .saveBtn:focus {
   background-color: rgb(116, 35, 35);
-}
-
-::placeholder {
-  color: blue;
-  font-size: 20px;
 }
