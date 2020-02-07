@@ -32,18 +32,21 @@ function timeSlot() {
 };
 timeSlot();
 
-
 // Saves current task inside the text box
-$("#save9").on("click", function (event) {
+$(this).on("click", function (event) {
   event.preventDefault();
-  let currentTask = $(`#task9`).val();
-  localStorage.setItem(`save9`, currentTask);
+  for (let i = 0; i < hoursInDay.length; i++) {
+  let currentTask = $(`#task${hoursInDay[i]}`).val();
+  localStorage.setItem(`save${hoursInDay[i]}`, currentTask);
+  }
 });
 
 // Shows previously saved tasks in the task input box
 function showTasks() {
-  let displayTask = localStorage.getItem(`save9`);
-  $(`#task9`).val(displayTask);
+  for (let i = 0; i < hoursInDay.length; i++) {
+  let displayTask = localStorage.getItem(`save${hoursInDay[i]}`);
+  $(`#task${hoursInDay[i]}`).val(displayTask);
+  }
 };
 showTasks();
 
