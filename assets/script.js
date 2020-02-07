@@ -10,6 +10,12 @@ console.log(moment().format('HH'));
 // Displays the day of the week in header
 $("#currentDay").text(moment().format('dddd, MMMM Do'));
 
+// Dynamically changing live time at top of page
+var updateTime = function() {
+  document.getElementById("currentClock")
+  .innerHTML = moment().format('hh:mm:ss a');
+}
+setInterval(updateTime, 1000);
 
 
 const hoursInDay = [9, 10, 11, 12, 13, 14, 15, 16, 17];
@@ -38,6 +44,7 @@ function timeSlot() {
 };
 
 timeSlot();
+updateTime();
 
 
 
