@@ -3,7 +3,7 @@ $("#currentDay").text(moment().format('dddd, MMMM Do'));
 
 // Dynamically changing live time at top of page
 var updateTime = function () {
-  $("#currentClock").text(moment().format('hh:mm:ss a'));
+  $("#currentClock").text(moment().format('hh:mm:ss A'));
 }
 setInterval(updateTime, 1000);
 updateTime();
